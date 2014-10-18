@@ -128,7 +128,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+			
+			// In here we need to make it so the different "tabs" go to seperate activities instead of the same one. Figure it out.
 			View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+				
+			
 			return rootView;
 		}
 
