@@ -9,5 +9,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="new_request_item_name">Item name: </string>
+    <string name="new_request_approx_$">Approxamate cost: $</string>
+    <string name="new_request_experation">Experation date: </string>
 
 </resources>
