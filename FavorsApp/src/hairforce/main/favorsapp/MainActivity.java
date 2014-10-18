@@ -37,8 +37,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(
-				R.id.navigation_drawer);
+		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mTitle = getTitle();
 
 		// Set up the drawer.
@@ -58,6 +57,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		case 1:
 			mTitle = getString(R.string.title_section1);
+			break;
 		case 2:
 			mTitle = getString(R.string.title_section2);
 			break;
@@ -128,7 +128,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+			
+			// In here we need to make it so the different "tabs" go to seperate activities instead of the same one. Figure it out.
 			View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+			
 			return rootView;
 		}
 

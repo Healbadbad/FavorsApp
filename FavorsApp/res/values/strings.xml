@@ -6,6 +6,15 @@
     <string name="title_section2">My Requests</string>
     <string name="title_section3">Accepted Requests</string>
     <string name="title_section4">Groups</string>
+    
+    <!-- No idea if this is even needed, just hold it for now -->
+    <string-array name="sections_array">
+        <item>Open Favors</item>
+        <item>My Requests</item>
+        <item>Accepted Requests</item>
+        <item>Groups</item>        
+    </string-array>
+    
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>

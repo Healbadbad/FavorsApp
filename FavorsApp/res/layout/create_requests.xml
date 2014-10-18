@@ -8,10 +8,10 @@
     android:paddingRight="16dp" >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/item_requesting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignLeft="@+id/item_cost"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="15dp"
         android:background="#ffffff"
@@ -22,7 +22,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/item_cost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
@@ -37,19 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/editText1"
+        android:layout_below="@+id/item_requesting"
         android:layout_marginTop="60dp"
         android:text="Estimated Cost:"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="60dp"
-        android:text="Expiration Date:"
         android:textColor="#ffffff" />
 
     <TextView
@@ -58,17 +48,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="51dp"
-        android:layout_toLeftOf="@+id/editText1"
+        android:layout_toLeftOf="@+id/item_requesting"
         android:text="Item:"
         android:textColor="#ffffff" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/pick_date_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_alignRight="@+id/editText2"
+        android:layout_alignRight="@+id/item_cost"
         android:background="@color/create_request_button_background"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -78,7 +68,7 @@
    
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/send_request_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView3"
@@ -86,5 +76,15 @@
         android:layout_marginBottom="15dp"
         android:background="@color/create_request_button_background"
         android:text="Create" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/item_cost"
+        android:layout_marginTop="70dp"
+        android:text="Expiration Date:"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>
