@@ -1,5 +1,6 @@
 package hairforce.main.data;
 
+
 import java.util.ArrayList;
 
 public class Group {
@@ -15,4 +16,25 @@ public class Group {
 		this.password = password;
 		this.members = new ArrayList<User>();
 	}
+	
+	public void importUsers() {
+		// TODO find a way to import
+	}
+	
+	public int getId() {
+		return this.id;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+
+	public ArrayList<User> getMembers() {
+		return this.members;
+	}
+	
+	public boolean checkPassword(String givenPassword) {
+		return password.equals(givenPassword);
+	}
+
 }

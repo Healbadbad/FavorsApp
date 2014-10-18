@@ -1,5 +1,6 @@
 package hairforce.main.data;
 
+
 public class Favor {
 
 	
@@ -24,4 +25,54 @@ public class Favor {
 		this.status = status;
 		this.group = group;
 	}
+	
+	public int getId() {
+		return this.id;
+	}
+	
+	public String getItemName() {
+		return this.itemName;
+	}
+	
+	public User getBuyer() {
+		return this.buyer;
+	}
+	
+	public User getRequester() {
+		return this.requester;
+	}
+	
+	public int getApproxCostInCents() {
+		return this.approxCostInCents;
+	}
+
+	public long getStartTime() {
+		return this.startTime;
+	}
+		
+	public long getEndTime() {
+		return this.endTime;
+	}
+
+	public long getTimeLeft() {
+		return this.endTime - System.nanoTime();
+	}
+	
+	public long getElapsedTime() {
+		return System.nanoTime() - this.startTime;
+	}
+
+	public void changeStatus(Status newStatus) {
+		this.status = newStatus;
+	}
+	public Status getStatus() {
+		return this.status;
+	}
+	
+	public Group getGroup() {
+		return this.group;
+	}
+
+
 }
+

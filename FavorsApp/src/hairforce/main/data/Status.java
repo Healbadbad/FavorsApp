@@ -1,5 +1,6 @@
 package hairforce.main.data;
 
+
 public enum Status {
 	PENDING("pending"), COMPLETED("completed"), ACCEPTED("accepted");
 	
@@ -13,7 +14,11 @@ public enum Status {
 		return this.status;
 	}
 	
-	public void changeStatus(Status newStatus) { 
-		this.status = newStatus.status;
+//	public void changeStatus(Status newStatus) { 
+//		this.status = newStatus.status;
+//	}
+//
+	public boolean isEqual(Status s) {
+		return this.status == s.status;
 	}
 }
