@@ -74,7 +74,7 @@ public class CreateRequests extends Fragment implements OnClickListener {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		((Button) getView().findViewById(R.id.pick_date_button)).setText(data.getIntExtra("month", 0) + "/"
+		((Button) getView().findViewById(R.id.pick_date_button)).setText((data.getIntExtra("month", 0) + 1) + "/"
 				+ data.getIntExtra("day", 0) + "/" + data.getIntExtra("year", 0));
 		this.expiration_date = ((Button) getView().findViewById(R.id.pick_date_button)).getText().toString();
 

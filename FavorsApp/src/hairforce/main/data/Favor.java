@@ -1,5 +1,7 @@
 package hairforce.main.data;
 
+import android.os.AsyncTask;
+
 public class Favor {
 
 	private String Item;
@@ -18,9 +20,10 @@ public class Favor {
 		this.ExpirationDate = expirationDate.replaceAll("/", "_");
 		this.statuscode = Status.PENDING;
 		this.group = group;
-		String end = this.Item + "@" + String.valueOf(this.Price) + "@" + this.Requester + "@"
-				+ this.ExpirationDate;
-		new Network().doInBackground("newrequest", this.group.toString(), end);
+
+		String end = this.Item + "@" + String.valueOf(this.Price) + "@" + this.Requester + "@" + this.ExpirationDate;
+		AsyncTask<String, ?, ?> network = new Network();
+		network.execute("newrequest", this.group.toString(), end);
 	}
 
 	public String getItemName() {
