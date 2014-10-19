@@ -14,16 +14,18 @@ public class Favor {
 	private Status status;
 	private Group group;
 
-	public Favor(int id, String itemName, User buyer, User requester, int approxCostInCents, long startTime, long endTime, Status status, Group group) {
+	public Favor(int id, String itemName, User requester, int approxCostInCents, long startTime, long endTime, Status status, Group group) {
 		this.id = id;
 		this.itemName = itemName;
-		this.buyer = buyer;
+		this.buyer = null;
 		this.requester = requester;
 		this.approxCostInCents = approxCostInCents;
 		this.startTime=  startTime;
 		this.endTime = endTime;
 		this.status = status;
 		this.group = group;
+		String end=  this.itemName + "@" +String.valueOf(this.approxCostInCents) + "@"  + this.requester + "@" + String.valueOf(endTime);
+		new Network().doInBackground("newrequest", this.group.toString(), end);
 	}
 	
 	public int getId() {
@@ -71,6 +73,10 @@ public class Favor {
 	
 	public Group getGroup() {
 		return this.group;
+	}
+	
+	public void foundBuyer(User buyer) {
+		this.buyer = buyer;
 	}
 
 

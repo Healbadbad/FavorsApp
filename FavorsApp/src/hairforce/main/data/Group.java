@@ -1,5 +1,5 @@
 package hairforce.main.data;
-
+import javax.net.ssl.HttpsURLConnection;
 
 import java.util.ArrayList;
 
@@ -15,6 +15,8 @@ public class Group {
 		this.name = name;
 		this.password = password;
 		this.members = new ArrayList<User>();
+		Network network = new Network();
+		network.doInBackground("newgroup", this.name + "&"+this.password);
 	}
 	
 	public void importUsers() {
@@ -37,4 +39,8 @@ public class Group {
 		return password.equals(givenPassword);
 	}
 
+	@Override
+	public String toString() {
+		return this.name;
+	}
 }
