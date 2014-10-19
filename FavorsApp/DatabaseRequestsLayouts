@@ -1,0 +1,6 @@
+Base URL: http://favors-hairforce.rhcloud.com
+Specific Requests are concatenated to the end of the URL.
+Make New Group: /newgroup/<groupinfo>   <groupinfo> = GroupName@password
+Register new person to group: /newPerson/<GroupName>/<Name@FacebookToken>
+Make a new Request: /newrequest/<GroupName>/<Item@Price@Requester@ExpirationTime>
+Query a person's requests: /myrequests/<GroupName>/<Name@FacebookToken>
