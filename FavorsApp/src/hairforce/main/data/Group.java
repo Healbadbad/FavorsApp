@@ -1,17 +1,13 @@
 package hairforce.main.data;
-import javax.net.ssl.HttpsURLConnection;
-
 import java.util.ArrayList;
 
 public class Group {
 
-	private int id;
 	private String name;
 	private String password;
 	private ArrayList<User> members;
 
-	public Group(int id, String name, String password) {
-		this.id = id;
+	public Group(String name, String password) {
 		this.name = name;
 		this.password = password;
 		this.members = new ArrayList<User>();
@@ -21,10 +17,6 @@ public class Group {
 	
 	public void importUsers() {
 		// TODO find a way to import
-	}
-	
-	public int getId() {
-		return this.id;
 	}
 	
 	public String getName() {

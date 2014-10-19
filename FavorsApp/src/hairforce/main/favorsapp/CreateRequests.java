@@ -64,8 +64,8 @@ public class CreateRequests extends Fragment implements OnClickListener {
 			String cost_value = cost.getText().toString();
 			String date_value = this.expiration_date;
 
-			User requester = null;
-			Group group = null;
+			Group group = new Group("fuck me", "yes");
+			User requester = new User("asdhk", group, "ddd");
 			new Favor(item_value, (int) (Double.parseDouble(cost_value)*100), date_value, requester, group);
 
 		}

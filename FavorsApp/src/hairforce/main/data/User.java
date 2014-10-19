@@ -1,34 +1,56 @@
 package hairforce.main.data;
 
 import com.google.gson.Gson;
+
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class User {
+	private String name;
 	private String FBtoken;
 	private ArrayList<Favor> favors;
 	private ArrayList<Group> groups;
 
 	public User(String name, Group group, String FBtoken) {
+		this.name = name;
 		this.FBtoken = FBtoken;
 		this.favors = new ArrayList<Favor>();
 		this.groups = new ArrayList<Group>();
 		this.groups.add(group);
-		new Network().doInBackground("newperson", group.toString(), FBtoken);
+		Network network = new Network();
+		network.execute("newperson", group.toString(), FBtoken);
 	}
 
 	public void importFavors(Group group) {
-		
-		Gson gson = new Gson();
-
-//		MyType target = new MyType
-		new Network().doInBackground("myrequests", group.toString(),this.FBtoken);
+		// MyType target = new MyType
+		Network network = new Network();
+		network.parent = this;
+		network.isFavor = true;
+		network.execute("myrequests", group.toString(), this.FBtoken);
 	}
 
 	public void importGroups() {
-		// TODO get the groups from a database
+		Network network = new Network();
+		network.parent = this;
+		network.isFavor = false;
+		network.execute("mygroups", this.name, this.FBtoken);
+	}
+
+	public void loadFavors(String blah) {
+		Gson gson = Utility.getGson();
+		this.favors.add(gson.fromJson(blah, Favor.class));
+	}
+	
+	public void loadGroups(String blah) {
+		Gson gson = Utility.getGson();
+		this.groups.add(gson.fromJson(blah, Group.class));		
 	}
 
 	public String getName() {
+		return this.name;
+	}
+
+	public String getFBToken() {
 		return this.FBtoken;
 	}
 
@@ -39,4 +61,5 @@ public class User {
 	public ArrayList<Group> getGroups() {
 		return this.groups;
 	}
+
 }

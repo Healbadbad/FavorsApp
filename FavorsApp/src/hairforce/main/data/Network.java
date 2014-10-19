@@ -9,11 +9,13 @@ import java.net.URL;
 
 import android.os.AsyncTask;
 
-public class Network extends AsyncTask<String, String, Integer> {
+public class Network extends AsyncTask<String, String, String> {
 	public static final String BASE_URL = "http://favors-hairforce.rhcloud.com/";
+	public User parent;
+	public boolean isFavor;
 
 	@Override
-	protected Integer doInBackground(String... params) {
+	protected String doInBackground(String... params) {
 		String urlPath = BASE_URL;
 		for (String string : params) {
 			urlPath += string + "/";
@@ -29,11 +31,22 @@ public class Network extends AsyncTask<String, String, Integer> {
 			while ((inputLine = br.readLine()) != null) {
 				html += inputLine;
 			}
-			return connection.getResponseCode();
+			return html;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	protected void onPostExecute(String result) {
+		if (this.parent.getClass() == User.class) {
+			if (isFavor) {
+				((User) this.parent).loadFavors(result);
+			} else {
+				((User) this.parent).loadGroups(result);
+			}
+		}
 	}
 }

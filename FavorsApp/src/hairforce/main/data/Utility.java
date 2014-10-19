@@ -1,5 +1,14 @@
 package hairforce.main.data;
 
-public class Utility {
+import com.google.gson.Gson;
 
+public class Utility {
+	private static Gson gson = null;
+	
+	public static Gson getGson() {
+		if(gson == null) {
+			gson = new Gson();
+		}
+		return gson;
+	}
 }
