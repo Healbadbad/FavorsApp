@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/item_cost"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/detail_item_text_id"
         android:layout_marginTop="15dp"
         android:background="#cccccc"
         android:ems="10"
@@ -25,7 +25,7 @@
         android:id="@+id/item_cost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/detail_item_value_text"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:background="#cccccc"
@@ -38,14 +38,14 @@
         android:id="@+id/send_request_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignLeft="@+id/detail_cost_text_id"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="15dp"
         android:background="@color/create_request_button_background"
         android:text="Create" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/detail_item_text_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -58,7 +58,7 @@
         android:id="@+id/pick_date_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/detail_cost_text_id"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:background="@color/create_request_button_background"
@@ -68,20 +68,20 @@
         android:text="@string/date_picked_text" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/detail_item_value_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/detail_item_text_id"
         android:layout_below="@+id/item_requesting"
         android:layout_marginTop="44dp"
         android:text="Estimated Cost (Dollars):"
         android:textColor="#ffffff" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/detail_cost_text_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/detail_item_value_text"
         android:layout_centerVertical="true"
         android:text="Expiration Date:"
         android:textColor="#ffffff" />

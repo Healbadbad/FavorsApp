@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/accept_request_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Button" />
+
+    <TextView
+        android:id="@+id/detail_requester_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/detail_expiration_date_text_id"
+        android:layout_below="@+id/detail_expiration_date_value_text"
+        android:layout_marginTop="17dp"
+        android:text="Requester:"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/detail_item_value_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_item_text_id"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/detail_expiration_date_text_id"
+        android:text="@string/detailed_text_field_1"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/detail_cost_value_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_cost_text_id"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/detail_expiration_date_text_id"
+        android:text="@string/detailed_text_field_2"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/detail_expiration_date_value_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/detail_cost_value_text"
+        android:layout_below="@+id/detail_expiration_date_text_id"
+        android:layout_marginTop="15dp"
+        android:text="@string/detailed_text_field_3"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/detail_requester_value_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/detail_expiration_date_value_text"
+        android:layout_below="@+id/detail_requester_text_id"
+        android:layout_marginTop="15dp"
+        android:text="@string/detailed_text_field_4"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/detail_group_value_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/detail_requester_value_text"
+        android:layout_below="@+id/detail_group_text_id"
+        android:layout_marginTop="15dp"
+        android:text="@string/detailed_text_field_5"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/detail_group_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/detail_item_text_id"
+        android:layout_below="@+id/detail_requester_value_text"
+        android:layout_marginTop="17dp"
+        android:text="Group:"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/detail_item_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/accept_request_button"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:text="Item:"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/detail_cost_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/detail_item_text_id"
+        android:layout_below="@+id/detail_item_value_text"
+        android:layout_marginTop="17dp"
+        android:text="Cost:"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/detail_expiration_date_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/detail_item_text_id"
+        android:layout_below="@+id/detail_cost_value_text"
+        android:layout_marginTop="17dp"
+        android:text="Expiration Date:"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>

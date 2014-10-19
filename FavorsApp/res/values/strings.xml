@@ -22,5 +22,13 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="create_a_request">+</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="detailed_text_field_1">Fill Me</string>
+    <string name="detailed_text_field_2">Fill Me</string>
+    <string name="detailed_text_field_3">Fill Me</string>
+ 	<string name="detailed_text_field_4">Fill Me</string>
+    <string name="detailed_text_field_5">Fill Me</string>
+                
+                    
 
 </resources>
