@@ -1,5 +1,7 @@
 package hairforce.main.data;
 
+import android.os.AsyncTask;
+
 public class Favor {
 
 	private String itemName;
@@ -26,7 +28,8 @@ public class Favor {
 		this.group = group;
 		String end = this.itemName + "@" + String.valueOf(this.approxCostInCents) + "@" + this.requester + "@"
 				+ this.month + "@" + this.day + "@" + this.year;
-		new Network().doInBackground("newrequest", this.group.toString(), end);
+		AsyncTask<String, ?, ?> network = new Network();
+		network.execute("newrequest", this.group.toString(), end);
 	}
 
 	public String getItemName() {
