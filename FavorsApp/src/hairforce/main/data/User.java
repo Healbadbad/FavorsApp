@@ -4,28 +4,31 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 public class User {
-	private int id;
+	private String FBtoken;
 	private ArrayList<Favor> favors;
 	private ArrayList<Group> groups;
 
-	public User(int id, String username) {
-		this.id = id;
+	public User(String name, Group group, String FBtoken) {
+		this.FBtoken = FBtoken;
 		this.favors = new ArrayList<Favor>();
 		this.groups = new ArrayList<Group>();
+		this.groups.add(group);
+		new Network().doInBackground("newperson", group.toString(), FBtoken);
 	}
 
-	public void importFavors() {
+	public void importFavors(Group group) {
+		
 		Gson gson = new Gson();
-		MyType target = new MyType
-		http://favors-hairforce.rhcloud.com/dump
+//		MyType target = new MyType
+		new Network().doInBackground("myrequests", group.toString(),this.FBtoken);
 	}
 
 	public void importGroups() {
 		// TODO get the groups from a database
 	}
 
-	public int getId() {
-		return this.id;
+	public String getName() {
+		return this.FBtoken;
 	}
 
 	public ArrayList<Favor> getFavors() {
