@@ -4,10 +4,6 @@
     tools:context="hairforce.main.favorsapp.MainActivity" >
 
     <item
-        android:id="@+id/create_a_request"
-        android:title="@string/create_a_request"
-        app:showAsAction="withText|ifRoom"/>
-    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
