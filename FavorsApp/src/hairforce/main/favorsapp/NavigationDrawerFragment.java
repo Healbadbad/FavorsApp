@@ -265,8 +265,8 @@ public class NavigationDrawerFragment extends Fragment {
 
 		if (item.getItemId() == R.id.create_a_request) {
 			Toast.makeText(getActivity(), "Create A Request.", Toast.LENGTH_SHORT).show();
-			FragmentManager fragmentManager = getChildFragmentManager();
-			fragmentManager.beginTransaction().replace(R.id.container, CreateRequests.newInstance()).commit();
+			FragmentManager fragmentManager = getFragmentManager();
+			fragmentManager.beginTransaction().add(CreateRequests.newInstance(),  "Create A Request").commit();
 
 			return true;
 		}
