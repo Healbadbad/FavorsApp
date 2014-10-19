@@ -1,20 +1,17 @@
 package hairforce.main.favorsapp;
 
-import hairforce.main.favorsapp.MainActivity.MyRequestsFragment;
-import hairforce.main.favorsapp.MainActivity.OpenFavorsFragment;
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -278,12 +275,9 @@ public class NavigationDrawerFragment extends Fragment {
 		}
 
 		if (item.getItemId() == R.id.create_a_request) {
-			Toast.makeText(getActivity(), "Create A Request.",
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(getActivity(), "Create A Request.", Toast.LENGTH_SHORT).show();
 			FragmentManager fragmentManager = getFragmentManager();
-			fragmentManager.beginTransaction()
-					.add(CreateRequests.newInstance(), "Create A Request")
-					.commit();
+			fragmentManager.beginTransaction().add(R.id.container, CreateRequests.newInstance()).commit();
 
 			return true;
 		}
@@ -318,28 +312,4 @@ public class NavigationDrawerFragment extends Fragment {
 		void onNavigationDrawerItemSelected(int position);
 	}
 
-	public static class CreateRequests extends Fragment {
-		public static CreateRequests newInstance() {
-			CreateRequests fragment = new CreateRequests();
-			Bundle args = new Bundle();
-			fragment.setArguments(args);
-			return fragment;
-		}
-
-		public CreateRequests() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.create_requests,
-					container, false);
-			return rootView;
-		}
-
-		@Override
-		public void onAttach(Activity activity) {
-			super.onAttach(activity);
-		}
-	}
 }
