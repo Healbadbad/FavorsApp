@@ -16,8 +16,7 @@ public class User {
 
 	public void importFavors() {
 		Gson gson = new Gson();
-		MyType target = new MyType
-		http://favors-hairforce.rhcloud.com/dump
+		//MyType target = new MyType;
 	}
 
 	public void importGroups() {

@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 	
@@ -111,25 +112,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	public void showDatePickerDialog(View v) {
-	    DatePickerFragment newFragment = new DatePickerFragment();
-	    newFragment.show(getFragmentManager(), "DatePicker");
-	}
-	
-	public void onClick(View v) {
-		switch (v.getId()) {
-		
-		case R.id.pick_date_button:
-			showDatePickerDialog(v);
-			break;
-			
-		case R.id.send_request_button:
-			
-			break;
-				
-		}
 	}
 
 }

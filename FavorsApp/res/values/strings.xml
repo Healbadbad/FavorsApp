@@ -8,6 +8,8 @@
     <string name="title_section3">Accepted Requests</string>
     <string name="title_section4">Groups</string>
     
+    <string name="date_picked_text">Pick a Date</string>
+    
     <!-- No idea if this is even needed, just hold it for now -->
     <string-array name="sections_array">
         <item>Open Favors</item>

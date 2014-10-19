@@ -37,8 +37,8 @@ public class create_requests extends Activity implements OnClickListener {
 	}
 	
 	public void showDatePickerDialog(View v) {
-	    DialogFragment newFragment = new DatePickerFragment();
-	    newFragment.show(getFragmentManager(), "datePicker");
+	    DatePickerFragment newFragment = new DatePickerFragment();
+	    newFragment.show(newFragment.getFragmentManager(), "datePicker");
 	}
 
 }
