@@ -17,9 +17,13 @@ public class GroupRequests extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.view_requests);
-	
-
-
+		
+		requestsListView = (ListView) findViewById(R.id.requestList);
+		
+		String requests[] = {"Test1", "Test2", "Test3", "Numbers", "Walls", "Dicks"}; // Put the requests here in however you import them
+		
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, )
+		
 		
 		
 	}

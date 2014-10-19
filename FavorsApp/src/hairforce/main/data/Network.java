@@ -11,7 +11,7 @@ import android.os.AsyncTask;
 
 public class Network extends AsyncTask<String, String, String> {
 	public static final String BASE_URL = "http://favors-hairforce.rhcloud.com/";
-	public User parent;
+	public Linker parent;
 	public boolean isFavor;
 
 	@Override
@@ -48,5 +48,6 @@ public class Network extends AsyncTask<String, String, String> {
 				((User) this.parent).loadGroups(result);
 			}
 		}
+		((Group)(this.parent)).loadUsers(result);
 	}
 }

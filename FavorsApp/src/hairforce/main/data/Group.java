@@ -1,7 +1,9 @@
 package hairforce.main.data;
 import java.util.ArrayList;
 
-public class Group {
+import com.google.gson.Gson;
+
+public class Group extends Linker{
 
 	private String name;
 	private String password;
@@ -16,9 +18,14 @@ public class Group {
 	}
 	
 	public void importUsers() {
-		// TODO find a way to import
+		Network network = new Network();
+		network.parent = null;
 	}
 	
+	public void loadUsers(String blah) {
+		Gson gson = Utility.getGson();
+		this.members.add(gson.fromJson(blah, User.class));
+	}
 	public String getName() {
 		return this.name;
 	}

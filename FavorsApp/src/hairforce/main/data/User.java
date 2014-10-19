@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-public class User {
+public class User extends Linker{
 	private String name;
 	private String FBtoken;
 	private ArrayList<Favor> favors;
