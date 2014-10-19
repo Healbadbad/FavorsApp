@@ -1,84 +1,68 @@
 package hairforce.main.data;
 
-
 public class Favor {
 
-	
-	private int id;
 	private String itemName;
 	private User buyer;
 	private User requester;
 	private int approxCostInCents;
-	private long startTime;
-	private long endTime;
 	private Status status;
 	private Group group;
+	private int month;
+	private int day;
+	private int year;
 
-	public Favor(int id, String itemName, User requester, int approxCostInCents, long startTime, long endTime, Status status, Group group) {
-		this.id = id;
+	public Favor(String itemName, int approxCostInCents, String expirationDate, User requester, Group group) {
 		this.itemName = itemName;
 		this.buyer = null;
 		this.requester = requester;
 		this.approxCostInCents = approxCostInCents;
-		this.startTime=  startTime;
-		this.endTime = endTime;
-		this.status = status;
+		String[] date = expirationDate.split("/");
+		this.month = Integer.parseInt(date[0]);
+		this.day = Integer.parseInt(date[1]);
+		this.year = Integer.parseInt(date[2]);
+
+		this.status = Status.PENDING;
 		this.group = group;
-		String end=  this.itemName + "@" +String.valueOf(this.approxCostInCents) + "@"  + this.requester + "@" + String.valueOf(endTime);
+		String end = this.itemName + "@" + String.valueOf(this.approxCostInCents) + "@" + this.requester + "@"
+				+ this.month + "@" + this.day + "@" + this.year;
 		new Network().doInBackground("newrequest", this.group.toString(), end);
 	}
-	
-	public int getId() {
-		return this.id;
-	}
-	
+
 	public String getItemName() {
 		return this.itemName;
 	}
-	
+
 	public User getBuyer() {
 		return this.buyer;
 	}
-	
+
 	public User getRequester() {
 		return this.requester;
 	}
-	
+
 	public int getApproxCostInCents() {
 		return this.approxCostInCents;
 	}
 
-	public long getStartTime() {
-		return this.startTime;
-	}
-		
-	public long getEndTime() {
-		return this.endTime;
-	}
-
-	public long getTimeLeft() {
-		return this.endTime - System.nanoTime();
-	}
-	
-	public long getElapsedTime() {
-		return System.nanoTime() - this.startTime;
+	public String getExperationDate() {
+		return this.month + "/" + this.day + "/" + this.year;
 	}
 
 	public void changeStatus(Status newStatus) {
 		this.status = newStatus;
 	}
+
 	public Status getStatus() {
 		return this.status;
 	}
-	
+
 	public Group getGroup() {
 		return this.group;
 	}
-	
+
 	public void foundBuyer(User buyer) {
 		this.buyer = buyer;
 	}
 
-
 }
-
