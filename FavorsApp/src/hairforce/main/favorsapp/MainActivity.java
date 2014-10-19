@@ -1,23 +1,17 @@
 package hairforce.main.favorsapp;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 	
@@ -55,7 +49,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		
 		switch (position) {
 		case 1:
-			fragmentManager.beginTransaction().replace(R.id.container, OpenFavorsFragment.newInstance(position)).commit();
+			fragmentManager.beginTransaction().replace(R.id.container, OpenRequestsFragment.newInstance(position)).commit();
 			break;
 		case 2:
 			fragmentManager.beginTransaction().replace(R.id.container, MyRequestsFragment.newInstance(position + 1)).commit();
@@ -119,109 +113,22 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		return super.onOptionsItemSelected(item);
 	}
 
-		
-	public static class OpenFavorsFragment extends Fragment {
-		private static final String ARG_SECTION_NUMBER = "section_number";
-		public static OpenFavorsFragment newInstance(int sectionNumber) {
-			OpenFavorsFragment fragment = new OpenFavorsFragment();
-			Bundle args = new Bundle();
-			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-			fragment.setArguments(args);
-			return fragment;
-		}
-
-		public OpenFavorsFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.activity_main, container, false);
-			return rootView;
-		}
-
-		@Override
-		public void onAttach(Activity activity) {
-			super.onAttach(activity);
-			((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
-		}
-	}
-		
-	public static class MyRequestsFragment extends Fragment {
-		private static final String ARG_SECTION_NUMBER = "section_number";
-		public static MyRequestsFragment newInstance(int sectionNumber) {
-			MyRequestsFragment fragment = new MyRequestsFragment();
-			Bundle args = new Bundle();
-			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-			fragment.setArguments(args);
-			return fragment;
-		}
-
-		public MyRequestsFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.activity_main, container, false);
-			return rootView;
-		}
-
-		@Override
-		public void onAttach(Activity activity) {
-			super.onAttach(activity);
-			((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
-		}
+	public void showDatePickerDialog(View v) {
+	    DatePickerFragment newFragment = new DatePickerFragment();
+	    newFragment.show(getFragmentManager(), "DatePicker");
 	}
 	
-	
-	public static class AcceptedRequestsFragment extends Fragment {
-		private static final String ARG_SECTION_NUMBER = "section_number";
-		public static AcceptedRequestsFragment newInstance(int sectionNumber) {
-			AcceptedRequestsFragment fragment = new AcceptedRequestsFragment();
-			Bundle args = new Bundle();
-			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-			fragment.setArguments(args);
-			return fragment;
-		}
-
-		public AcceptedRequestsFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.activity_main, container, false);
-			return rootView;
-		}
-
-		@Override
-		public void onAttach(Activity activity) {
-			super.onAttach(activity);
-			((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
-		}
-	}
-
-	public static class GroupsFragment extends Fragment {
-		private static final String ARG_SECTION_NUMBER = "section_number";
-		public static GroupsFragment newInstance(int sectionNumber) {
-			GroupsFragment fragment = new GroupsFragment();
-			Bundle args = new Bundle();
-			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-			fragment.setArguments(args);
-			return fragment;
-		}
-
-		public GroupsFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.groups, container, false);
-			return rootView;
-		}
-
-		@Override
-		public void onAttach(Activity activity) {
-			super.onAttach(activity);
-			((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
+	public void onClick(View v) {
+		switch (v.getId()) {
+		
+		case R.id.pick_date_button:
+			showDatePickerDialog(v);
+			break;
+			
+		case R.id.send_request_button:
+			
+			break;
+				
 		}
 	}
 

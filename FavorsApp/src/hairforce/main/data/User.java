@@ -1,6 +1,6 @@
 package hairforce.main.data;
 
-
+import com.google.gson.Gson;
 import java.util.ArrayList;
 
 public class User {
@@ -15,7 +15,9 @@ public class User {
 	}
 
 	public void importFavors() {
-		// TODO get the favors from a database
+		Gson gson = new Gson();
+		MyType target = new MyType
+		http://favors-hairforce.rhcloud.com/dump
 	}
 
 	public void importGroups() {
